@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- ... otros atributos ... -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item> <!-- Color de la barra de estado -->
+        <item name="android:navigationBarColor">@color/navigationBarColor</item> <!-- Color de la barra de navegación -->
+    </style>
+
+</resources>

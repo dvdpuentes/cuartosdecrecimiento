@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_speed_value">12dp</dimen>
+    <dimen name="text_speed_indicator">12dp</dimen>
+    <dimen name="size_speed">150dp</dimen>
+</resources>

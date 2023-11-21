@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="text_speed_value">12dp</dimen>
+    <dimen name="text_speed_indicator">25dp</dimen>
+    <dimen name="size_speed">250dp</dimen>
+</resources>

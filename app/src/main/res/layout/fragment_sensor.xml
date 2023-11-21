@@ -1,0 +1,232 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#00FFFFFF"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fs_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_fondo_sensor">
+
+        <!-- Título del Cuarto -->
+        <TextView
+            android:id="@+id/fs_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Cuarto 1"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Medidor de Temperatura -->
+
+        <!-- Medidor de Humedad -->
+
+        <!-- Contenedor para los Controles de Modo y Válvula -->
+
+        <com.github.anastr.speedviewlib.SpeedView
+            android:id="@+id/fs_temperature_gauge"
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fs_humidity_gauge"
+            app:layout_constraintStart_toEndOf="@+id/fs_humidity_gauge"
+            app:sv_centerCircleColor="#D2DAF4"
+            app:sv_centerCircleRadius="5dp"
+            app:sv_endDegree="405"
+            app:sv_indicator="NeedleIndicator"
+            app:sv_indicatorWidth="10dp"
+            app:sv_markColor="#FFFFFF"
+            app:sv_markWidth="1dp"
+            app:sv_maxSpeed="50"
+            app:sv_minSpeed="10"
+            app:sv_speedTextColor="#FFFFFF"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="16dp"
+            app:sv_speedometerMode="NORMAL"
+            app:sv_speedometerWidth="3dp"
+            app:sv_startDegree="135"
+            app:sv_textColor="#FFFFFF"
+            app:sv_tickNumber="5"
+            app:sv_unit="ºC"
+            app:sv_unitTextColor="#FFFFFF"
+            app:sv_withTremble="false" />
+
+        <com.github.anastr.speedviewlib.SpeedView
+            android:id="@+id/fs_humidity_gauge"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fs_title"
+            app:sv_centerCircleColor="#D2DAF4"
+            app:sv_centerCircleRadius="5dp"
+            app:sv_endDegree="405"
+            app:sv_indicator="NeedleIndicator"
+            app:sv_indicatorWidth="10dp"
+            app:sv_markColor="#FFFFFF"
+            app:sv_markStyle="BUTT"
+            app:sv_markWidth="1dp"
+            app:sv_maxSpeed="100"
+            app:sv_minSpeed="0"
+            app:sv_speedTextColor="#FFFFFF"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="12dp"
+            app:sv_speedometerMode="NORMAL"
+            app:sv_speedometerWidth="3dp"
+            app:sv_startDegree="135"
+            app:sv_textColor="#FFFFFF"
+            app:sv_tickNumber="6"
+            app:sv_unit="%"
+            app:sv_unitTextColor="#FFFFFF"
+            app:sv_withTremble="false" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fs_control_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/color_idle_mode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/fs_temperature_gauge"
+            app:layout_constraintTop_toBottomOf="@+id/fs_title">
+
+            <!-- Botón para la Válvula -->
+
+            <android.widget.Button
+                android:id="@+id/fs_btn_rele"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/color_rojo_off"
+                android:text="Off"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.widget.Button
+                android:id="@+id/fs_btn_increment"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/color_botton_temperature_set"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toEndOf="@+id/fs_temp_control_value"
+                app:layout_constraintTop_toTopOf="@+id/fs_btn_decrement" />
+
+            <!-- ToggleButton para Modo de Control -->
+
+            <ToggleButton
+                android:id="@+id/fs_mode_toggle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:textOff=""
+                android:textOn="Control"
+                app:layout_constraintStart_toStartOf="@+id/fs_btn_rele"
+                app:layout_constraintTop_toBottomOf="@+id/fs_btn_rele" />
+
+            <!-- ToggleButton para Modo de Control -->
+
+            <android.widget.Button
+                android:id="@+id/fs_btn_parameters"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:drawable/ic_menu_view"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <android.widget.Button
+                android:id="@+id/fs_btn_decrement"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/color_botton_temperature_set"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fs_mode_toggle" />
+
+            <TextView
+                android:id="@+id/fs_temp_control_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="10 ºC"
+                android:textAllCaps="false"
+                android:textColor="#636262"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fs_btn_decrement"
+                app:layout_constraintStart_toEndOf="@+id/fs_btn_decrement"
+                app:layout_constraintTop_toTopOf="@+id/fs_btn_decrement" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperatura:"
+                app:layout_constraintStart_toStartOf="@+id/fs_btn_decrement"
+                app:layout_constraintTop_toTopOf="@+id/fs_btn_rele" />
+
+            <TextView
+                android:id="@+id/fs_temperature_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="10.0 ºC"
+                android:textColor="#000000"
+                android:textSize="40px"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Humedad"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/fs_humidity_gauge"
+            app:layout_constraintEnd_toEndOf="@+id/fs_humidity_gauge"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="@+id/fs_humidity_gauge" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Temperatura"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/fs_temperature_gauge"
+            app:layout_constraintEnd_toEndOf="@+id/fs_temperature_gauge"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="@+id/fs_temperature_gauge" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+

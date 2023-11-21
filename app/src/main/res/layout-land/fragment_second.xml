@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/color_fondo_total"
+    tools:context=".SecondFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/color_parametros_sensor"
+            app:layout_constraintBottom_toTopOf="@+id/ss_contenedor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ss_humidity_gauge"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/ss_identificador"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="right"
+                android:text="00"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                app:layout_constraintStart_toEndOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/ss_direccion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="00"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintEnd_toEndOf="@+id/ss_identificador"
+                app:layout_constraintStart_toStartOf="@+id/ss_identificador"
+                app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+            <android.widget.Button
+                android:id="@+id/ss_btn_cambio_id"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/color_fondo_sensor"
+                android:text="Cambiar identificador"
+                android:textAllCaps="false"
+                android:textColor="#C2D3E1"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <android.widget.Button
+                android:id="@+id/ss_btn_cambio_direccion"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/color_fondo_sensor"
+                android:text="Cambio direccion"
+                android:textAllCaps="false"
+                android:textColor="#C2D3E1"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/ss_btn_cambio_id"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/ss_btn_cambio_id"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Identificador:"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Dirección:"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ss_btn_cambio_id" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Medidor de Humedad -->
+
+        <!-- Contenedor para los Controles de Modo y Válvula -->
+
+        <android.widget.Button
+            android:id="@+id/ss_btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/ic_delete"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/ss_contenedor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ss_contenedor" />
+
+        <com.github.anastr.speedviewlib.SpeedView
+            android:id="@+id/ss_temperature_gauge"
+            android:layout_width="@dimen/size_speed"
+            android:layout_height="@dimen/size_speed"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ss_humidity_gauge"
+            app:sv_centerCircleColor="#D2DAF4"
+            app:sv_centerCircleRadius="10dp"
+            app:sv_endDegree="405"
+            app:sv_indicator="NeedleIndicator"
+            app:sv_indicatorWidth="20dp"
+            app:sv_markColor="#FFFFFF"
+            app:sv_markWidth="1dp"
+            app:sv_maxSpeed="50"
+            app:sv_minSpeed="10"
+            app:sv_speedTextColor="#FFFFFF"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="@dimen/text_speed_value"
+            app:sv_speedometerMode="NORMAL"
+            app:sv_speedometerWidth="10dp"
+            app:sv_startDegree="135"
+            app:sv_textColor="#FFFFFF"
+            app:sv_textSize="@dimen/text_speed_indicator"
+            app:sv_tickNumber="5"
+            app:sv_unit="ºC"
+            app:sv_unitTextColor="#FFFFFF"
+            app:sv_unitTextSize="@dimen/text_speed_value"
+            app:sv_withTremble="false" />
+
+        <com.github.anastr.speedviewlib.SpeedView
+            android:id="@+id/ss_humidity_gauge"
+            android:layout_width="@dimen/size_speed"
+            android:layout_height="@dimen/size_speed"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/ss_temperature_gauge"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:sv_centerCircleColor="#D2DAF4"
+            app:sv_centerCircleRadius="10dp"
+            app:sv_endDegree="405"
+            app:sv_indicator="NeedleIndicator"
+            app:sv_indicatorWidth="20dp"
+            app:sv_markColor="#FFFFFF"
+            app:sv_markStyle="BUTT"
+            app:sv_markWidth="1dp"
+            app:sv_maxSpeed="100"
+            app:sv_minSpeed="0"
+            app:sv_speedTextColor="#FFFFFF"
+            app:sv_speedTextPosition="BOTTOM_CENTER"
+            app:sv_speedTextSize="@dimen/text_speed_value"
+            app:sv_speedometerMode="NORMAL"
+            app:sv_speedometerWidth="10dp"
+            app:sv_startDegree="135"
+            app:sv_textColor="#FFFFFF"
+            app:sv_textSize="@dimen/text_speed_indicator"
+            app:sv_tickNumber="11"
+            app:sv_unit="%"
+            app:sv_unitTextColor="#FFFFFF"
+            app:sv_unitTextSize="@dimen/text_speed_value"
+            app:sv_withTremble="false" />
+
+        <TextView
+            android:id="@+id/ss_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuarto #"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ss_contenedor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/color_idle_mode"
+            app:layout_constraintEnd_toStartOf="@+id/ss_btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ss_humidity_gauge">
+
+            <android.widget.Button
+                android:id="@+id/ss_btn_rele"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/color_rojo_off"
+                android:text="Off"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ToggleButton
+                android:id="@+id/ss_mode_toggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textOff=""
+                android:textOn="Control"
+                app:layout_constraintBottom_toBottomOf="@+id/ss_btn_rele"
+                app:layout_constraintStart_toEndOf="@+id/ss_btn_rele"
+                app:layout_constraintTop_toTopOf="@+id/ss_btn_rele" />
+
+            <android.widget.Button
+                android:id="@+id/ss_btn_decrement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/color_botton_temperature_set"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/ss_btn_rele"
+                app:layout_constraintStart_toEndOf="@+id/ss_mode_toggle"
+                app:layout_constraintTop_toTopOf="@+id/ss_btn_rele" />
+
+            <android.widget.Button
+                android:id="@+id/ss_btn_increment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/color_botton_temperature_set"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/ss_btn_decrement"
+                app:layout_constraintStart_toEndOf="@+id/ss_temp_control_value"
+                app:layout_constraintTop_toTopOf="@+id/ss_btn_decrement" />
+
+            <TextView
+                android:id="@+id/ss_temp_control_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="10 ºC"
+                android:textColor="@color/normal_temperature_set"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ss_btn_decrement"
+                app:layout_constraintStart_toEndOf="@+id/ss_btn_decrement"
+                app:layout_constraintTop_toTopOf="@+id/ss_btn_decrement" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humedad"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/ss_humidity_gauge"
+            app:layout_constraintStart_toStartOf="@+id/ss_humidity_gauge"
+            app:layout_constraintTop_toBottomOf="@+id/ss_humidity_gauge" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperatura"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/ss_temperature_gauge"
+            app:layout_constraintStart_toStartOf="@+id/ss_temperature_gauge"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="380dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/color_fondo_sensor"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/ss_titulo"
+            app:layout_constraintStart_toStartOf="@+id/ss_titulo"
+            app:layout_constraintTop_toBottomOf="@+id/ss_titulo">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical"
+                android:text="Temperatura:"
+                android:textColor="#FFFFFF"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/ss_actual_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:gravity="left"
+                android:text="40ºC"
+                android:textColor="#DBF5FD"
+                android:textSize="50dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

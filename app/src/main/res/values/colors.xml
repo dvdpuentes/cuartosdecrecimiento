@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorBorder">#000000</color> <!-- Negro para el borde -->
+    <color name="wait_temperature_set">#FF5733</color>
+    <color name="normal_temperature_set">#000000</color>
+    <color name="colorPrimary">#3F51B5</color> <!-- Color principal de tu app -->
+    <color name="colorPrimaryDark">#303F9F</color> <!-- Color para la barra de estado -->
+    <color name="colorAccent">#FF4081</color> <!-- Color de acento -->
+    <color name="navigationBarColor">#00111C</color> <!-- Color para la barra de navegación -->
+    <color name="disconnected_bluetooth">#FF0000</color> <!-- Bluetooth desconectado-->
+    <color name="connected_bluetooth">#007EFF</color> <!-- Bluetooth conectado -->
+
+</resources>
